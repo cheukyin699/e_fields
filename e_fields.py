@@ -17,7 +17,7 @@ FG_COL = GREEN              # Foreground (vector) colour
 pygame.init()
 
 SIZE = (700, 700)           # Size of window
-PXW, PXH = 15, 15           # How many pixels until we draw a vector
+PXW, PXH = 10, 10           # How many pixels until we draw a vector
 SCALE = 15                  # How long the vectors are (max)
 C_SCALE = 5e-6              # Scale that strength increases by (C)
 SENSITIVITY_DEG = 20        # How many pixels until you could delete things
