@@ -1,13 +1,11 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
+from functools import reduce
 import math
 import pygame
 import sys
 
 # Colours
-RED =       (200, 000, 000)
 GREEN =     (000, 200, 000)
-BLUE =      (000, 000, 200)
-WHITE =     (255, 255, 255)
 BLACK =     (000, 000, 000)
 
 BG_COL = BLACK              # Background colour
@@ -91,8 +89,8 @@ def update_display(col):
     # Sanity checking
     if len(fields) == 0: return
 
-    for x in xrange(0, SIZE[0], PXW):
-        for y in xrange(0, SIZE[1], PXH):
+    for x in range(0, SIZE[0], PXW):
+        for y in range(0, SIZE[1], PXH):
             # Gets a list of vector of the various fields
             strengths = map(lambda i: get_field(i, (x, y)), fields)
             # Sums all the vectors up
@@ -117,6 +115,7 @@ while running:
                 strength -= S_FACTOR
             if key[pygame.K_c]:
                 fields = []
+                redraw = True
         elif evt.type == pygame.MOUSEBUTTONDOWN:
             pressed = pygame.mouse.get_pressed()
             # Check what buttons are pressed
